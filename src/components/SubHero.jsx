@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import Slider from './Slider'
 
 const SubHero = () => {
   return (
@@ -36,13 +37,18 @@ const SubHero = () => {
             </div>
           </div>
           {/* Carousel */}
-          <div className='flex gap-1 xl:hidden my-8'>
-              <div>1</div>
+          {/* <div className='flex gap-1 xl:hidden my-8'>
+              <div>
+                <h1>Tastes Way Better</h1>
+                <p></p>
+              </div>
               <div>2</div>
               <div>3</div>
               <div>4</div>
               <div>5</div>
-          </div>
+          </div> */}
+
+          <Slider/>
 
           {/* Buttons */}
           <div className='flex items-center gap-4'>
