@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --font-anton: "Anton", sans-serif ;
+    --font-open :  "Open Sans" ,Open, sans-serif;
+    --font-finlandica :  "Finlandica" ,Open;
+}
+
+html{
+
+    overflow: scroll;
+    scrollbar-width:none;
+    scrollbar-gutter: none;
+}
+@layer base{
+    body{
+        @apply  bg-[#D6E6FF] text-white overflow-x-hidden ;
+    }
+
+    a{
+        @apply cursor-pointer
+    }
+}
