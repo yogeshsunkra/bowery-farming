@@ -45,10 +45,10 @@ export default {
       addComponents({
         '.h1':{
           "@media (max-width:378px)":{
-            "@apply text-[min(12vw+11vh,70px)] leading-none":{}
+            "@apply text-[120px] leading-none":{}
           },
           "@media (max-width:768px) and (min-width:379px)":{
-            "@apply text-[min(14.5vw+14.5vh,96px)] leading-none":{}
+            "@apply text-[min(14.5vw+14.5vh,150px)] leading-none":{}
           },
           "@media (min-width:769px) and (max-width:1024px)":{
             "@apply text-[210px] leading-none":{}
@@ -64,16 +64,16 @@ export default {
         '.h2':{
 
           "@media (max-width:328px)":{
-            "@apply text-[min(12vw+11vh,30px)] leading-none":{}
+            "@apply text-[500px] leading-none":{}
           },
           "@media (max-width:425px) and (min-width:329px)":{
-            "@apply text-[min(14.5vw+14.5vh,50px)] leading-none":{}
+            "@apply text-[120px] leading-none":{}
           },
           "@media (max-width:568px) and (min-width:425px)":{
-            "@apply text-[min(14.5vw+14.5vh,80px)] leading-none":{}
+            "@apply text-[80px] leading-none":{}
           },
           "@media (max-width:768px) and (min-width:569px)":{
-            "@apply text-[min(14.5vw+14.5vh,150px)] leading-none":{}
+            "@apply text-[150px] leading-none":{}
           },
           "@media (min-width:769px) ":{
             "@apply text-[160px] leading-none":{}

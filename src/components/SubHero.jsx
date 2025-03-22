@@ -14,7 +14,7 @@ const SubHero = () => {
 
         <div className='flex flex-col w-full items-center justify-center '>
           {/* content */}
-          <div className='relative w-[70%] md:w-[80%] mx-auto py-8  flex flex-col 
+          <div className='relative w-full md:w-[80%] mx-auto py-8  flex flex-col 
           items-center justify-center h2 leading-[0.95]
            text-text-2'>
             <div className='  self-start   font-Anton font-[900]'>BITE</div>
@@ -36,17 +36,6 @@ const SubHero = () => {
 
             </div>
           </div>
-          {/* Carousel */}
-          {/* <div className='flex gap-1 xl:hidden my-8'>
-              <div>
-                <h1>Tastes Way Better</h1>
-                <p></p>
-              </div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-              <div>5</div>
-          </div> */}
 
           <Slider/>
 

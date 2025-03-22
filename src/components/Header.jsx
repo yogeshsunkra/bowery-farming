@@ -145,8 +145,8 @@ const Header = () => {
 
 
       {/* Hero Subject */}
-      <div className='hero-content absolute hero-sm md:hero-bg z-20 flex justify-center items-center w-full h-[65%] 
-       md:h-[55%] bottom-0 overflow-hidden '>
+      <div className='hero-content absolute hero-sm md:hero-bg z-20 flex justify-center items-center w-full min-h-[65%] 
+       md:min-h-[55%] bottom-0 overflow-hidden '>
 
         <div className='absolute hidden xl:block w-full top-[10%] left-[70%] '>
           <img src='/bowery_logo.svg' />

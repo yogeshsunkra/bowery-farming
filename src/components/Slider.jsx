@@ -4,56 +4,73 @@ import { slides } from '../data';
 
 const Slider = () => {
 
-    const [currentIndex,setCurrentIndex] = useState(0);
-    const [dotPosition , setDotPosition] = useState();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [dotPosition, setDotPosition] = useState();
 
-    // useEffect(()=>{
+  // useEffect(()=>{
 
-    //     const pos = Math.abs(`400px - ${currentIndex*20}px`);
-    //     setDotPosition(pos);
+  //     const pos = Math.abs(`400px - ${currentIndex*20}px`);
+  //     setDotPosition(pos);
 
-    // },[currentIndex])
+  // },[currentIndex])
 
-    // console.log(dotPosition);
+  // console.log(dotPosition);
 
   return (
-    <div className='relative w-full mt-4 overflow-hidden '>
-        {/* Pagination Dots */}
-      <div className='relative flex  w-full mt-4 overflow-hidden'>
-        <div className={`flex  w-full min-h-8   justify-center  items-center `}
-             
+    <div className='relative flex flex-col justify-center items-center w-full mt-4 overflow-hidden 
+    lg:hidden'>
+      {/* Pagination Dots */}
+      <div className=' w-full relative flex  mt-4 justify-center items-center '>
+        <div className={`flex items-center ml-14 gap-2 min-h-8 `}
+
         >
 
-            {slides.map((item,index) =>{
+          {slides.map((item, index) => {
 
-                const distance = Math.abs(currentIndex - index);
-                const size = Math.max(25-distance*5,5);
+            const distance = Math.abs(currentIndex - index);
+            const size = Math.max(20- distance * 5, 5);
+            const opacity = Math.max(1 - distance * 0.20, 0.20);
 
 
-                return(
-                    <button key={index} 
-                    className={`rounded-full mr-1 ml-4  transition-transform duration-500 font font-Finlandica p8  ${index === currentIndex ?"bg-ui-1":"bg-gray-700"}`}
-                    style={{
-                      width : `${size}px`,
-                      height : `${size}px`,
-                      transform : `translateX(calc(100% - ${currentIndex * 25}px + 8px))`
-                      
-                    }}
-                    onClick={()=>setCurrentIndex(index)}    
+            return (
+              <button key={index}
+                className={`rounded-full transition-transform duration-200  font-Finlandica p6 text-white ${index === currentIndex ? "bg-ui-2  " : "bg-gray-700"}`}
+                style={{
+                  minWidth: `${size}px`,
+                  minHeight: `${size}px`,
+                  opacity:opacity,
+                  transform: `translateX(calc(50% - ${currentIndex * 20}px))`
 
-                    >{
-                      currentIndex === index ? `${item.num}` : ""
-                    }</button>
-                )
-            })}
+                }}
+                onClick={() => setCurrentIndex(index)}
+
+              >{
+                  currentIndex === index ? `${item.num}` : ""
+                }</button>
+            )
+          })}
 
         </div>
       </div>
 
       {/* Slides */}
-      <div>
+      <div className='w-[70%] overflow-hidden flex mb-8 mt-2'>
 
+
+        {slides.map((item, index) => {
+          return (
+            <div key={index} className='min-w-full  transition-transform duration-200 flex flex-col justify-center items-center text-center'
+            style = {{
+              transform: `translateX( -${currentIndex * 100}%)`
+            }}>
+              <h1 className='p6 leading-3 font-Finlandica font-[600] text-text-1 mt-4'>{item.title}</h1>
+              <span className='p5  font-Finlandica font-[400] text-text-1 mt-4'>{item.text}</span>
+            </div>
+          )
+        })}
       </div>
+
+
     </div>
   )
 }
