@@ -3,6 +3,8 @@ import Header from './components/Header'
 import SubHero from './components/SubHero'
 import Process from './components/Process'
 import Footer from './components/Footer'
+import Boweries from './components/Boweries'
+import Stories from './components/Stories'
 
 
 const App = () => {
@@ -14,6 +16,8 @@ const App = () => {
       <Header />
       <SubHero />
       <Process/>
+      <Boweries/>
+      <Stories/>
       <Footer />
       </div>
     
