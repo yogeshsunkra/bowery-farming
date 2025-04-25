@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './Button'
+import Logo from './logo'
 import gsap from 'gsap'
+import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
@@ -9,12 +11,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
 
+
+  // const path = MotionPathPlugin.path([
+  //   { x: -100, y: 100 },
+  //   { x: 0, y: 0 },
+  //   { x: 100, y: 100 },
+  // ],{curvature:0.5});
+
+    const lettersRef = useRef([]);
   
-    // const path = MotionPathPlugin.path([
-    //   { x: -100, y: 100 },
-    //   { x: 0, y: 0 },
-    //   { x: 100, y: 100 },
-    // ],{curvature:0.5});
 
   useGSAP(() => {
     const header = gsap.timeline()
@@ -42,11 +47,81 @@ const Header = () => {
         { duration: 0.1, scale: 1 }, '<'),
 
 
+
+        //LOGO
+
+            lettersRef.current.forEach((el, index) => {
+                header.fromTo(
+                  el,
+                  {
+                    motionPath: {
+                      path: "#curvedPath",
+                      align: "#curvedPath",
+                      alignOrigin: [0.5, 0.5], // Keep letters centered
+                      start: 1, // Start from endpoint
+                      end: index/5, 
+                    },
+                    opacity: 0,
+                  },
+                  {
+                    motionPath: {
+                      path: "#curvedPath",
+                      align: "#curvedPath",
+                      alignOrigin: [0.5, 0.5],
+                      start: 1,
+                      end: index / 5, // Adjust spacing to match image
+                      autoRotate: false, // Prevent tilting
+                    },
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: "power2.Out",
+                    // delay: index * 0.2,
+                  },
+                ),`+=${index * 0.2}`;
+              }),
+
+
+            // lettersRef.current.forEach((el, index) => {
+            //   const textPath = el.querySelector("textPath");
+            
+            //   // Set initial startOffset
+            //   gsap.set(textPath, {
+            //     attr: { startOffset: "100%" }, // Off the path
+            //     opacity: 0,
+            //   });
+            
+            //   // Animate to final position
+            //   header.to(textPath, {
+            //     attr: { startOffset: `${(index + 1) * 15}%` }, // Final position
+            //     opacity: 1,
+            //     duration: 0.2,
+            //     ease: "power2.out",
+                
+            //   },`+=${index * 0.2}`);
+            // });
+            
+
+        //
+        header.from('.navItems', {
+          duration: 0.5,
+          delay: 0.2,
+          display: "none",
+          opacity:0,
+          y: 20,
+        }, )
+
+
+
       header.to('.slider', {
         duration: 0.4,
         height: "100%",
         
-      }),
+
+      },'+=1'),
+      header.from('.logo, .navItems', {
+        color:"#0F6EFD"
+
+      },"<"),
       header.to('.tempTxt', {
         duration: 0.1,
         opacity: 0,
@@ -67,7 +142,7 @@ const Header = () => {
         y: 200,
       }, "<")
 
-  })
+  },[])
 
 
   return (
@@ -80,11 +155,26 @@ const Header = () => {
       <div className='relative w-full h-max flex items-center justify-center'>
 
 
-        <div className='logo absolute font-Finlandica font-[700] text-[36px] top-1/2  self-center'>
-          Bowery
+        <div className='logo absolute font-Finlandica font-[700] text-[25px] top-0 w-[200px] self-center z-40 text-white '>
+        <svg width="100%" height="100%" viewBox="0 0 200 60" >
+        <defs>
+          <path id="curvedPath" d="M 55,40 A 100,100 0 0,1 155,45" fill="none"/>
+        </defs>
+  
+        
+  
+        {["B", "O", "W", "E", "R", "Y"].map((letter, index) => (
+          <text key={index} ref={(el) => (lettersRef.current[index] = el)}  fontFamily="Arial" fill="currentColor">
+            <textPath href="#curvedPath" startOffset={`${(index + 1) * 15}%`} textAnchor="middle">
+              {letter}
+            </textPath>
+          </text>
+        ))}
+      </svg>
+          {/* <Logo/> */}
         </div>
 
-        <div className='hidden xl:block nav w-full  xl:w-[65%] mx-auto z-30 pt-4'>
+        <div className='navItems hidden xl:block nav w-full  xl:w-[65%] mx-auto z-30 pt-4'>
 
           <div className='flex justify-between items-center'>
             <div className='menu-items flex gap-4'>
@@ -154,9 +244,9 @@ const Header = () => {
 
         <div className='absolute flex flex-col bottom-[15%] text-center items-center my-auto mx-auto '>
 
-        <div className='w-[2rem] md:w-[4rem] xl:hidden'>
-          <img src='/bowery_logo.svg' />
-        </div>
+          <div className='w-[2rem] md:w-[4rem] xl:hidden'>
+            <img src='/bowery_logo.svg' />
+          </div>
 
           <span className='text-white/90 font-[500] text-[14px] font-Open py-4'>
             Deep inside our wonderful world of vertical farms,
