@@ -9,7 +9,7 @@ const Boweries = () => {
                     <p className='text-ui-2'> Our Boweries</p>
                 </div>
                 <div className='relative h-full'>
-                    <div className='my-4 flex flex-col gap-4 mb-10'>
+                    <div className='my-4 mr-4 flex flex-col gap-4 mb-10'>
                         <h1 className='text-[2.5rem] text-text-1 font-Finlandica  font-[900] leading-none -tracking-[0.060em]'>More with less?<br />
                             Oh yes.</h1>
 
@@ -37,13 +37,13 @@ const Boweries = () => {
                         </div>
                     </div>
                     <div className='hidden xs:block'>
-                        <div className=' absolute  w-[13rem]  h-64 rounded-xl overflow-hidden '>
+                        <div className=' absolute  w-[40%]  h-64 rounded-xl overflow-hidden '>
                             <img src='/boweries/boweries-1.webp' className='object-cover w-full h-full object-center ' />
                         </div>
-                        <div className='absolute top-20 right-0 w-[14rem] h-64 rounded-xl overflow-hidden shadow-inner  shadow-black'>
+                        <div className='absolute top-20 right-0 w-[40%] h-64  rounded-xl overflow-hidden shadow-inner  shadow-black'>
                             <img src='/boweries/boweries-2.webp' className='object-cover w-full h-full object-center ' />
                         </div>
-                        <div className='absolute bottom-20 right-0 max-w-[14rem] max-h-64 rounded-xl overflow-hidden '>
+                        <div className='absolute bottom-20 right-0 w-[55%] max-h-64 lg:h-72  rounded-xl overflow-hidden '>
                             <img src='/boweries/boweries-3.webp' className='object-cover w-full h-full object-center ' />
                         </div>
                     </div>

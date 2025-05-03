@@ -54,7 +54,7 @@ const SubHero = () => {
           gsap.to(".content", {
             opacity: 1,
             scale: 1,
-            duration: 0.5,
+            duration: 0.2,
             ease: "power2.out",
           });
         },

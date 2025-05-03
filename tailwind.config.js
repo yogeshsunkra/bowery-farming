@@ -38,7 +38,9 @@ export default {
 
       },
       screens:{
-        xs:'480px'
+        // xxs:"460px",
+        xs:'480px',
+        
       },
 
     

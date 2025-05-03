@@ -56,11 +56,11 @@ const Process = () => {
     }, [])
 
     return (
-        <div className='processContainer relative flex flex-col  w-full bg-[#ffffff]   '>
+        <div className='processContainer relative flex flex-col  w-full bg-[#ffffff]  items-center '>
 
-            <div className='w-full xl:w-[60%]  flex flex-col p-8  h-screen mb-12'>
+            <div className='w-full xl:w-[60%]  flex flex-col  p-8  h-screen mb-12'>
                 <span className='text-text-1 p6 font-finlandica font-[600] uppercase'>Process</span>
-                <div className='flex flex-col md:flex-row gap-8 justify-between my-8'>
+                <div className='flex flex-col md:flex-row gap-8 justify-between my-8 items-center '>
                     <div className='w-full lg:w-[50%] '>
                         <h1 className=' text-[38px] md:text-[42px] text-text-1 font-Anton font-extrabold tracking-[0.01em] leading-none'>How we grow <br />
                             our greens.</h1>
